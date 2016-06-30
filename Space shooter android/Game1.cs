@@ -132,6 +132,7 @@ namespace Space_shooter_android
                     effect.EnableDefaultLighting();
 
                     effect.PreferPerPixelLighting = true;
+                    //test
 
                     effect.World = Matrix.CreateRotationX(MathHelper.Pi/2);
 

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Space_shooter_android.Space_shooter_android" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk />
+	<application android:label="Space shooter android" android:icon="@drawable/Icon"></application>
+</manifest>

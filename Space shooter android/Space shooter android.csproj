@@ -65,6 +65,7 @@
     <Compile Include="Source\2DGraphics\Graphic2D.cs" />
     <Compile Include="Source\3DGraphics\Camera.cs" />
     <Compile Include="Source\3DGraphics\Model.cs" />
+    <Compile Include="Source\Game\GameModel.cs" />
     <Compile Include="Source\Hud\TouchHUD.cs" />
     <Compile Include="Source\Game\MainGame.cs" />
     <Compile Include="Source\Math\Place.cs" />

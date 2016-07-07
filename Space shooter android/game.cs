@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Content;
-
+using Space_shooter_android.Source;
 namespace Space_shooter_android
 {
     /// <summary>
@@ -19,6 +19,7 @@ namespace Space_shooter_android
         Model playerShip;
         bool touched = false;
         public ContentManager content;
+        private MainGame game;
         public Game()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -30,6 +31,9 @@ namespace Space_shooter_android
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
             playersPosition = Vector2.Zero;
+
+            //load the game
+            game = new MainGame(this);
         }
 
         /// <summary>
@@ -94,6 +98,9 @@ namespace Space_shooter_android
             }
 
             // TODO: Add your update logic here
+
+            //update the game
+            game.update(gameTime);
 
             base.Update(gameTime);
         }
@@ -163,7 +170,26 @@ namespace Space_shooter_android
                 mesh.Draw();
             }
 
+            //draw the main game
+            game.draw(spriteBatch);
+
             base.Draw(gameTime);
+        }
+
+        public GraphicsAdapter graphicsAdapter
+        {
+            get
+            {
+                return GraphicsDevice.Adapter;
+            }
+        }
+
+        public ContentManager Content
+        {
+            get
+            {
+                return this.Content;
+            }
         }
     }
 }

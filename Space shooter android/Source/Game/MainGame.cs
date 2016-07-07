@@ -33,18 +33,23 @@ namespace Space_shooter_android.Source
             //start the game by settings up the hud
             manager = game;
 
-            hud = new TouchHUD(manager.)
+            //load the hud
+            hud = new TouchHUD(manager.graphicsAdapter, manager.Content.Load<Texture2D>("FireButton.png"), manager.Content.Load<Texture2D>("Joystick.png"));
+
         }
 
         public void update(GameTime time)
         {
-
+            //update the hud
         }
 
         public void draw(SpriteBatch batch)
         {
+            batch.Begin();
             //draw the hud
             hud.draw(batch);
+
+            batch.End();
         }
 
 

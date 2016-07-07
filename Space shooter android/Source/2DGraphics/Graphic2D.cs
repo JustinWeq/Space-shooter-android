@@ -19,7 +19,7 @@ namespace Space_shooter_android.Source._2DGraphics
         private Texture2D texture;
         protected Vector2 position;
         protected Vector2 dimensions;
-
+        
         public Texture2D Texture
         {
             get

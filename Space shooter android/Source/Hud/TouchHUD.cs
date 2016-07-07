@@ -15,7 +15,7 @@ using Space_shooter_android.Source._2DGraphics;
 namespace Space_shooter_android.Source
 {
     
-    class TouchHUD
+    public class TouchHUD
     {
         private Graphic2D fireButton, joystick;
 

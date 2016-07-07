@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Space_shooter_android.Source
 {
-    class MainGame
+    public class MainGame
     {
         private TouchHUD hud;
         private Game manager;

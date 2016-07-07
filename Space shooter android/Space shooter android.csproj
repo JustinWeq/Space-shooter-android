@@ -63,6 +63,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\2DGraphics\Graphic2D.cs" />
+    <Compile Include="Source\3DGraphics\Camera.cs" />
     <Compile Include="Source\3DGraphics\Model.cs" />
     <Compile Include="Source\Hud\TouchHUD.cs" />
     <Compile Include="Source\Game\MainGame.cs" />

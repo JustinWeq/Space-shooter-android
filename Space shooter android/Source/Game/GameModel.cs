@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework;
 
 namespace Space_shooter_android.Source.Game
 {
-    class GameModel : SSAModel
+    public class GameModel : SSAModel
     {
         protected Place place;
         public GameModel(Model model,Place place) : base(model)
@@ -24,7 +24,7 @@ namespace Space_shooter_android.Source.Game
             
         }
 
-        public void update()
+        public virtual void update()
         {
             place.update();
         }

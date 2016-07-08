@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Space_shooter_android.Source._3DGraphics
 {
-    class SSAModel
+    public class SSAModel
     {
         protected Model model;
 

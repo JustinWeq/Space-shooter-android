@@ -19,7 +19,7 @@ namespace Space_shooter_android.Source
     {
         private Graphic2D fireButton, joystick;
 
-        public TouchHUD(GraphicsAdapter adapter,Texture2D fireButton,Texture2D joystickButton)
+        public TouchHUD(SpaceGame game,Texture2D fireButton,Texture2D joystickButton)
         {
             //set the buttons location based on the adapter
             int buttonWidth;
@@ -28,18 +28,18 @@ namespace Space_shooter_android.Source
             int buttonY;
 
             //calculate button dimensions based on screen
-            buttonWidth = adapter.CurrentDisplayMode.Width / 10;
+            buttonWidth = game.Width / 10;
 
-            buttonHeight = adapter.CurrentDisplayMode.Height / 10;
+            buttonHeight = game.Height / 10;
 
             //calculate first buttons position nased on scrren dimensions
             buttonX = buttonWidth;
-            buttonY = adapter.CurrentDisplayMode.Height- (buttonWidth * 2);
+            buttonY = game.Height- (buttonWidth * 2);
 
             joystick = new Graphic2D(joystickButton, new Vector2(buttonX, buttonY), new Vector2(buttonWidth, buttonWidth));
 
             //calculate second buttons positions based on screen dimensions
-            buttonX = adapter.CurrentDisplayMode.Width - (buttonWidth * 2);
+            buttonX = game.Width - (buttonWidth * 2);
 
             this.fireButton = new Graphic2D(fireButton, new Vector2(buttonX, buttonY), new Vector2(buttonWidth, buttonWidth));
 

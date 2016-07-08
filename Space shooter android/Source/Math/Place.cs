@@ -28,7 +28,7 @@ namespace Space_shooter_android.Source
             this.scale = scale;
         }
 
-        public void update()
+        public virtual void update()
         {
             //update the world matrix
 
@@ -69,6 +69,18 @@ namespace Space_shooter_android.Source
             set
             {
                 scale = value;
+            }
+        }
+
+        public Vector3 Rotation
+        {
+            get
+            {
+                return rotation;
+            }
+            set
+            {
+                rotation = value;
             }
         }
 

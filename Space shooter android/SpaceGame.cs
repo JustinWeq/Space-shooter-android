@@ -9,7 +9,7 @@ namespace Space_shooter_android
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game : Microsoft.Xna.Framework.Game
+    public class SpaceGame : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -20,20 +20,21 @@ namespace Space_shooter_android
         bool touched = false;
         public ContentManager content;
         private MainGame game;
-        public Game()
+        private int width,height;
+        public SpaceGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
             graphics.IsFullScreen = true;
-            graphics.PreferredBackBufferWidth  = GraphicsDevice.Adapter.CurrentDisplayMode.Width;
-            graphics.PreferredBackBufferHeight = GraphicsDevice.Adapter.CurrentDisplayMode.Height;
+            width = Window.ClientBounds.Width;
+            height = Window.ClientBounds.Height;
+            graphics.PreferredBackBufferWidth  =width;
+            graphics.PreferredBackBufferHeight = height;
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
             playersPosition = Vector2.Zero;
 
-            //load the game
-            game = new MainGame(this);
         }
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Space_shooter_android
             //load the players ship texture
             playerShipTexture = Content.Load<Texture2D>("PlayerShipTexture");
 
+            game = new MainGame(this);
 
             // TODO: use this.Content to load your game content here
         }
@@ -88,7 +90,7 @@ namespace Space_shooter_android
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                Exit();
+              //  Exit();
 
             //move the player
            // playersPosition.X += (TouchPanel.GetState().Count > 0)?1:0;
@@ -176,19 +178,28 @@ namespace Space_shooter_android
             base.Draw(gameTime);
         }
 
-        public GraphicsAdapter graphicsAdapter
-        {
-            get
-            {
-                return GraphicsDevice.Adapter;
-            }
-        }
 
-        public ContentManager Content
+        public ContentManager GameContent
         {
             get
             {
                 return this.Content;
+            }
+        }
+
+        public int Width
+        {
+            get
+            {
+                return width;
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return height;
             }
         }
     }

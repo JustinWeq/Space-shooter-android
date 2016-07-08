@@ -18,7 +18,7 @@ namespace Space_shooter_android
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            var g = new Game();
+            var g = new SpaceGame();
             SetContentView((View)g.Services.GetService(typeof(View)));
             g.Run();
         }

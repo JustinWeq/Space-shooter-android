@@ -18,9 +18,9 @@ namespace Space_shooter_android.Source
     public class MainGame
     {
         private TouchHUD hud;
-        private Game manager;
+        private SpaceGame manager;
 
-        public Game Manager
+        public SpaceGame Manager
         {
             get
             {
@@ -28,13 +28,13 @@ namespace Space_shooter_android.Source
             }
         }
 
-        public MainGame(Game game)
+        public MainGame(SpaceGame game)
         {
-            //start the game by settings up the hud
+            //start the SpaceGame by settings up the hud
             manager = game;
 
             //load the hud
-            hud = new TouchHUD(manager.graphicsAdapter, manager.Content.Load<Texture2D>("FireButton.png"), manager.Content.Load<Texture2D>("Joystick.png"));
+            hud = new TouchHUD(game, manager.GameContent.Load<Texture2D>("FireButton"), manager.Content.Load<Texture2D>("Joystick"));
 
         }
 

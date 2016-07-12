@@ -10,11 +10,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Microsoft.Xna.Framework;
-
 using Microsoft.Xna.Framework.Graphics;
+
+
 namespace Space_shooter_android.Source._3DGraphics
 {
-    class Camera
+    public class Camera
     {
         private Matrix view;
         private Matrix projection;

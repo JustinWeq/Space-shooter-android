@@ -18,9 +18,15 @@ namespace Space_shooter_android.Source._3DGraphics
     {
         protected Model model;
 
+        protected float radius;
+
         public SSAModel(Model model)
         {
             this.model = model;
+
+            //get the radius of the model for collision
+            radius = model.Meshes[0].BoundingSphere.Radius;
+
         }
 
         public virtual void draw(Place place = null,Camera camera = null)

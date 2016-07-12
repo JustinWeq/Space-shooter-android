@@ -75,6 +75,11 @@ namespace Space_shooter_android.Source.Game
             base.draw(place, camera);
         }
 
+        public bool collides(GameModel other)
+        {
+
+            return (model.Meshes[0].BoundingSphere.Intersects(other.model.Meshes[0].BoundingSphere));
+        }
 
     }
 }

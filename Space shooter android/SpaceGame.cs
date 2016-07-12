@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Content;
 using Space_shooter_android.Source;
+using Space_shooter_android.Source.Game;
 namespace Space_shooter_android
 {
     /// <summary>
@@ -169,7 +170,7 @@ namespace Space_shooter_android
                     //effect.TextureEnabled = true;
                 }
 
-                mesh.Draw();
+               // mesh.Draw();
             }
 
             //draw the main game

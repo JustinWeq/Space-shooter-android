@@ -36,11 +36,11 @@ namespace Space_shooter_android.Source._3DGraphics
                 return projection;
             }
         }
-        public Camera(GraphicsAdapter adapter)
+        public Camera(int screenWidth,int screenHeight)
         {
             //create the projection matrix
 
-            float aspectRatio = adapter.CurrentDisplayMode.Width / (float)adapter.CurrentDisplayMode.Height;
+            float aspectRatio = screenWidth / (float)screenHeight;
 
             float fieldOfView = MathHelper.PiOver4;
 
@@ -58,7 +58,7 @@ namespace Space_shooter_android.Source._3DGraphics
         {
             //update the camera
 
-            view = Matrix.CreateLookAt(lookFrom, lookAt, Vector3.Up);
+            view = Matrix.CreateLookAt(lookFrom, lookAt, Vector3.UnitZ);
         }
     }
 }

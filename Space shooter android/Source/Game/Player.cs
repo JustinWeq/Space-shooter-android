@@ -20,6 +20,7 @@ namespace Space_shooter_android.Source.Game
         public Player(Model model,Place place,Vector2 force = new Vector2()) : base(model,place)
         {
             this.force = force;
+            Direction = MathHelper.Pi;
         }
 
         public Vector2 Force
@@ -37,9 +38,12 @@ namespace Space_shooter_android.Source.Game
         public override void update()
         {
             //update the new translation
-            place.Translation = new Vector3((float)Math.Cos(Direction) *Magnitude,0,(float)Math.Sin(Direction) * Magnitude);
-            place.Rotation = new Vector3(MathHelper.PiOver2, Direction, 0);
+            place.Translation = new Vector3(Translation.X+(float)Math.Cos(Direction) *Magnitude,Translation.Y+ (float)Math.Sin(Direction) * Magnitude,0);
+            place.Rotation = new Vector3(0, 0, Direction);
             place.Scale = Vector3.One;
+            Direction += MathHelper.Pi / 32;
+            //fix the driection if it is needlessly out of bounds
+            Direction %= MathHelper.Pi*2;
             base.update();
 
         }

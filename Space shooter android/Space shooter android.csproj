@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Activity1.cs" />
     <Compile Include="Source\Game\Player.cs" />
+    <Compile Include="Source\Hud\Button.cs" />
+    <Compile Include="Source\Hud\Joystick.cs" />
     <Compile Include="SpaceGame.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

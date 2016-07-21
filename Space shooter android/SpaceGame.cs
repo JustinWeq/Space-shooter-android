@@ -5,6 +5,8 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Content;
 using Space_shooter_android.Source;
 using Space_shooter_android.Source.Game;
+using System.Collections.Generic;
+
 namespace Space_shooter_android
 {
     /// <summary>
@@ -90,20 +92,24 @@ namespace Space_shooter_android
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-              //  Exit();
+            // if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed) ;
+            //  Exit();
 
             //move the player
-           // playersPosition.X += (TouchPanel.GetState().Count > 0)?1:0;
+            // playersPosition.X += (TouchPanel.GetState().Count > 0)?1:0;
+            //collect touches
+            List<Vector2> touches = new List<Vector2>();
+             
            foreach(TouchLocation touch in TouchPanel.GetState())
             {
                 playersPosition = touch.Position;
+                touches.Add(touch.Position);
             }
 
             // TODO: Add your update logic here
 
             //update the game
-            game.update(gameTime);
+            game.update(gameTime,touches);
 
             base.Update(gameTime);
         }

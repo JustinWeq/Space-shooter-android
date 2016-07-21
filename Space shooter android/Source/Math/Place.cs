@@ -32,7 +32,7 @@ namespace Space_shooter_android.Source
         {
             //update the world matrix
 
-            world = Matrix.CreateTranslation(translation) * Matrix.CreateFromYawPitchRoll(rotation.X,rotation.Y,rotation.Z);
+            world = Matrix.CreateScale(scale)*Matrix.CreateFromYawPitchRoll(rotation.X,rotation.Y,rotation.Z)* Matrix.CreateTranslation(translation);
         }
 
         public Matrix World

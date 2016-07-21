@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Space_shooter_android.Source._3DGraphics;
+using Space_shooter_android.Source.Hud;
 
 namespace Space_shooter_android.Source.Game
 {
@@ -43,18 +44,23 @@ namespace Space_shooter_android.Source.Game
 
             player.Magnitude = 2f;
 
+            
+
             //set up the camera to have it look at the player
             camera = new Camera(game.Width,game.Height);
         }
 
-        public void update(GameTime time)
+        public void update(GameTime time,List<Vector2> touches)
         {
             //update the hud
+            hud.update(touches);
+            player.Direction += MathHelper.Pi / 32 * hud.Stick.X;
             //update the player
             player.update();
 
+
             //update the cameras view
-            camera.updateView(player.Translation, new Vector3(1,1,19));
+            camera.updateView(player.Translation - Vector3.One, new Vector3(player.Translation.X+ 1, player.Translation.Y+ 1, 19));
         }
 
         public void draw(SpriteBatch batch)

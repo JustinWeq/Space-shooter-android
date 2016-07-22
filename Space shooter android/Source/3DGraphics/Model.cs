@@ -20,6 +20,28 @@ namespace Space_shooter_android.Source._3DGraphics
 
         protected float radius;
 
+        public float Radius
+        {
+            get
+            {
+                return radius;
+            }
+        }
+
+        protected float alpha;
+
+        public float Alpha
+        {
+            get
+            {
+                return alpha;
+            }
+            set
+            {
+                alpha = value;
+            }
+        }
+
         public SSAModel(Model model)
         {
             this.model = model;
@@ -31,30 +53,9 @@ namespace Space_shooter_android.Source._3DGraphics
 
         public virtual void draw(Place place = null,Camera camera = null)
         {
-            // //draw the current code using the passed in place, if there was not one passed in do not update the basic effects
-            // if (place != null|| camera != null)
-            // {
-            //     foreach(ModelMesh mesh in model.Meshes)
-            //     {
-
-            //         foreach(BasicEffect effect in mesh.Effects)
-            //         {
-            //             effect.World = Matrix.CreateRotationX(MathHelper.Pi / 2); ;
-            //             if(camera!= null)
-            //             {
-            //                 effect.Projection = camera.Projection;
-            //                 effect.View = camera.View;
-            //             }
-            //         }
-            //     }
-            // }
-
-
-            //foreach(ModelMesh mesh in model.Meshes)
-            // {
-            //     //draw the model
-            //     mesh.Draw();
-            // }
+            //check to see if the alpha is less then 0 and if it is do not draw the model
+            if (alpha < 0f)
+                return;
 
             foreach (ModelMesh mesh in model.Meshes)
             {
@@ -74,14 +75,6 @@ namespace Space_shooter_android.Source._3DGraphics
                     Vector3 cameraUpVector = Vector3.UnitZ;
 
                     effect.View = camera.View;//Matrix.CreateLookAt(cameraPos, cameraLookAt, cameraUpVector);
-
-                    float aspectRatio = 1280 / (float)720;
-
-                    float fieldOfView = MathHelper.PiOver4;
-
-                    float nearClipPane = 1;
-
-                    float farClipPane = 200;
 
                     effect.Projection = camera.Projection;
 

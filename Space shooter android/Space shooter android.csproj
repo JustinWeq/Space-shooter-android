@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity1.cs" />
+    <Compile Include="Source\Game\MainMenu.cs" />
     <Compile Include="Source\Game\Player.cs" />
     <Compile Include="Source\Hud\Button.cs" />
     <Compile Include="Source\Hud\Joystick.cs" />

@@ -93,6 +93,7 @@ namespace Space_shooter_android.Source.Game
         public void draw(SpriteBatch batch)
         {
             manager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
+            manager.GraphicsDevice.BlendState = BlendState.AlphaBlend;
             switch(state)
             {
                 case GameState.PLAYING:

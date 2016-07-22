@@ -44,6 +44,8 @@ namespace Space_shooter_android.Source._3DGraphics
 
         public SSAModel(Model model)
         {
+            alpha = 1f;
+
             this.model = model;
 
             //get the radius of the model for collision
@@ -77,6 +79,8 @@ namespace Space_shooter_android.Source._3DGraphics
                     effect.View = camera.View;//Matrix.CreateLookAt(cameraPos, cameraLookAt, cameraUpVector);
 
                     effect.Projection = camera.Projection;
+
+                    effect.Alpha = alpha;
 
                     //effect.Texture = redCube;
                     //effect.TextureEnabled = true;

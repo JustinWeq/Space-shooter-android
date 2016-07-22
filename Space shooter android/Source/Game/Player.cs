@@ -21,6 +21,7 @@ namespace Space_shooter_android.Source.Game
         {
             this.force = force;
             Direction = 0;
+            alpha = 1f;
         }
 
         public Vector2 Force

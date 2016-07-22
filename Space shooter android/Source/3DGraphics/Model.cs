@@ -16,6 +16,20 @@ namespace Space_shooter_android.Source._3DGraphics
 {
     public class SSAModel
     {
+        protected Vector3 color;
+
+        public Vector3 Color
+        {
+            get
+            {
+                return color;
+            }
+            set
+            {
+                color = value;
+            }
+        }
+
         protected Model model;
 
         protected float radius;
@@ -45,6 +59,7 @@ namespace Space_shooter_android.Source._3DGraphics
         public SSAModel(Model model)
         {
             alpha = 1f;
+            color = new Vector3(0.3f, 0.3f, 0.3f);
 
             this.model = model;
 
@@ -56,7 +71,7 @@ namespace Space_shooter_android.Source._3DGraphics
         public virtual void draw(Place place = null,Camera camera = null)
         {
             //check to see if the alpha is less then 0 and if it is do not draw the model
-            if (alpha < 0f)
+            if (alpha < 0.001f)
                 return;
 
             foreach (ModelMesh mesh in model.Meshes)
@@ -81,6 +96,8 @@ namespace Space_shooter_android.Source._3DGraphics
                     effect.Projection = camera.Projection;
 
                     effect.Alpha = alpha;
+
+                    effect.AmbientLightColor = color;
 
                     //effect.Texture = redCube;
                     //effect.TextureEnabled = true;

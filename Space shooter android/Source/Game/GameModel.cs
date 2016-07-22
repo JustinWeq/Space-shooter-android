@@ -18,6 +18,14 @@ namespace Space_shooter_android.Source.Game
     public class GameModel : SSAModel
     {
         protected Place place;
+
+        public Place MPlace
+        {
+            get
+            {
+                return place;
+            }
+        }
         public GameModel(Model model,Place place) : base(model)
         {
             this.place = place;

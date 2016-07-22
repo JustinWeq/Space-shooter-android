@@ -132,3 +132,8 @@
 /processorParam:TextureFormat=Color
 /build:WhiteTexture.png
 
+#begin Level1.lvl
+/importer:
+/processor:
+/build:Level1.lvl
+

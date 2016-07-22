@@ -62,6 +62,7 @@
     <Compile Include="Source\Game\Level.cs" />
     <Compile Include="Source\Game\MainMenu.cs" />
     <Compile Include="Source\Game\Player.cs" />
+    <Compile Include="Source\Game\FadeEffectModel.cs" />
     <Compile Include="Source\Hud\Button.cs" />
     <Compile Include="Source\Hud\Joystick.cs" />
     <Compile Include="SpaceGame.cs" />

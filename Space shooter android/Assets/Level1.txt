@@ -1,0 +1,41 @@
+﻿levelName level1
+declare enemy enemy1
+position 0 0
+depth 0
+collides
+health 1
+speed 0.2
+model PlayerShip
+end
+
+begin level
+color 0f 0f 0f
+declare decor stuff
+model Sphere
+position 3 3
+depth -5
+orbit 1 2
+end
+declare group group
+position 1 1
+decor stuff 0 0 0
+decor stuff 0 1 1
+decor stuff 0 -1 -1
+end
+place group 0 0 0
+place player 0 0 0
+end
+
+begin combat
+sleep 2
+message hello?
+place enemy 0 5 5
+sleep 2
+message Woah an enemy, better take care of him
+message Enemy: We will destroy you!
+message I better raise my sheilds
+message You must defeat all enemys to finish the game
+sleep 2
+wait for enemys
+end
+return to main

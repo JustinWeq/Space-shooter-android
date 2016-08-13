@@ -25,7 +25,8 @@ namespace Space_shooter_android.Source.Game
         private Camera camera;
         private GameState state;
         private MainMenu startMenu;
-
+        private SpriteFont font;
+        private string testText = null;
         private enum GameState
         {
                 IN_MENU,
@@ -64,7 +65,11 @@ namespace Space_shooter_android.Source.Game
             startMenu = new MainMenu(manager.GameContent.Load<Texture2D>("Play"), 
                 manager.GameContent.Load<Texture2D>("Title"), new Vector2(manager.Width, manager.Height),this);
 
+            //load the font
+            font = game.GameContent.Load<SpriteFont>("Font");
 
+            //load the file text
+            testText = MainActivity.getInstance().readTxtFromAssets("Level1.txt");
         }
 
         public void update(GameTime time,List<Vector2> touches)
@@ -92,6 +97,8 @@ namespace Space_shooter_android.Source.Game
 
         public void draw(SpriteBatch batch)
         {
+
+
             manager.GraphicsDevice.DepthStencilState = DepthStencilState.Default;
             manager.GraphicsDevice.BlendState = BlendState.AlphaBlend;
             switch(state)
@@ -107,10 +114,15 @@ namespace Space_shooter_android.Source.Game
                     break;
 
                 case GameState.IN_MENU:
+
+                    //draw the text
+
                     //draw the main menu
 
                     //start drawing 2d
                     batch.Begin();
+
+                    batch.DrawString(font, testText, Vector2.Zero, Color.OrangeRed);
 
                     startMenu.draw(batch);
 

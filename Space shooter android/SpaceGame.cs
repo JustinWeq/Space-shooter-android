@@ -14,6 +14,7 @@ namespace Space_shooter_android
     /// </summary>
     public class SpaceGame : Microsoft.Xna.Framework.Game
     {
+        public static string testString;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D redCube;
@@ -24,6 +25,8 @@ namespace Space_shooter_android
         public ContentManager content;
         private MainGame game;
         private int width,height;
+        private SpriteFont font;
+        public static ContentManager manager;
         public SpaceGame()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -37,7 +40,8 @@ namespace Space_shooter_android
             graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 
             playersPosition = Vector2.Zero;
-
+            testString = "Empty";
+            manager = Content;
         }
 
         /// <summary>
@@ -74,6 +78,9 @@ namespace Space_shooter_android
             game = new MainGame(this);
 
             // TODO: use this.Content to load your game content here
+
+            //load sprite font
+            font = Content.Load<SpriteFont>("Font");
         }
 
         /// <summary>
@@ -207,6 +214,18 @@ namespace Space_shooter_android
             get
             {
                 return height;
+            }
+        }
+
+        public string MessageString
+        {
+            get
+            {
+                return testString;
+            }
+            set
+            {
+                testString = value;
             }
         }
     }
